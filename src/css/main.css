@@ -1,0 +1,53 @@
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    /* estilo para seção top */
+}
+
+.wrapper {
+    display: flex;
+    flex-grow: 1;
+}
+
+nav {
+    /* estilo para seção lat */
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.middlewave {
+    /* estilo para seção middlewave */
+}
+
+.middle {
+    /* estilo para seção middle */
+}
+
+.right {
+    /* estilo para seção right */
+}
+
+.main {
+    /* estilo para seção main */
+}
+
+.piano {
+    /* estilo para seção piano */
+}
+
+aside {
+    /* estilo para seção equ */
+}
+
+footer {
+    /* estilo para seção bottom e footer */
+}
