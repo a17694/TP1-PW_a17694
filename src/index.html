@@ -359,7 +359,7 @@
             Backward
         </button>
 
-        <button class="btn btn-primary" onclick="wavesurfer.playPause();">
+        <button class="btn btn-primary" onclick="playSound();">
             <i class="fa fa-play"></i>
             Play
             /
@@ -563,7 +563,12 @@
         let file = evt.target.files[0];
         let reader = new FileReader();
         reader.onload = function(e) {
-            playSound(e.target.result);
+
+            // depois ver os campos que tenho que passar para coloar o nome do file no nome da musica
+            // ou ver se ha metadados que possam ajudar nisto e meter no src do audio o file em
+            // base64 talvez e no fim chamar a funçao playsound
+            document.querySelector("audio").setAttribute('src', e.target.result)
+            //playSound(e.target.result);
 
         }
         reader.readAsArrayBuffer(file);
@@ -581,7 +586,6 @@
 
     try {
 
-
         canvas = document.getElementById('meter');
         ctx = canvas.getContext("2d");
         let gradient = ctx.createLinearGradient(0,0,0,300);
@@ -593,18 +597,18 @@
 
         let context = new AudioContext();
 
-        function playSound(arraybuffer) {
+        // function playSound(arraybuffer) {
+        function playSound() {
             context.close();
             context	= new AudioContext();
 
+            const audio = document.querySelector("audio")
+            let source = context.createMediaElementSource(audio);
 
-            // const audio = document.querySelector("audio")
-            // let source = context.createMediaElementSource(audio);
-
-            let source = context.createBufferSource();
-            context.decodeAudioData(arraybuffer, function (buffer) {
-                source.buffer = buffer;
-            });
+            // let source = context.createBufferSource();
+            // context.decodeAudioData(arraybuffer, function (buffer) {
+            //     source.buffer = buffer;
+            // });
 
             splitter = context.createChannelSplitter();
 
@@ -650,7 +654,8 @@
             jsNode.connect(context.destination);
             analyser.connect(jsNode);
 
-            source.start();
+            //source.start();
+            wavesurfer.play()
         }
 
         Math.average = function(arguments) {
