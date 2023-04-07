@@ -1,6 +1,7 @@
+<!--Style-->
 <style>
-    html{
-        margin:0px !important;
+    html {
+        margin: 0px !important;
         padding: 0px !important;
     }
 
@@ -8,7 +9,7 @@
         height: 100vh;
         background-color: #5b0a0d;
         border: none;
-        margin:0px !important;
+        margin: 0px !important;
         padding: 0px !important;
     }
 
@@ -16,31 +17,35 @@
     .container {
         width: 100%;
         display: flex;
+    }
+
+    .row {
         flex-direction: row;
-        border: 2px solid black;
+    }
+
+    .column {
+        flex-direction: column;
     }
 
     .center {
         justify-content: center;
-        align-items: center;
     }
 
-    .left {
-        justify-content: start;
-        align-items: flex-start;
+    .boder-2-black{
+        border: 2px solid black;
     }
 
-    /* TOP */
-    header {
+    /**
+    END BASE
+     */
+
+    /* HEADER */
+    .header {
         width: 100%;
-        height: 5vh;
-        min-height: 20px;
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
+        height: 40px;
     }
 
-    .openicon {
+    .header-openicon {
         background-color: #f69839;
         width: 2%;
         min-width: 25px;
@@ -50,67 +55,79 @@
         color: white;
     }
 
-    .top {
+    .header-top {
         width: 98%;
         min-width: 50px;
-        text-align: center;
-        color: white;
-        border: 2px solid black;
-    }
-
-    /* BODY */
-    .wrapper {
-        display: flex;
-        flex-grow: 1;
-    }
-
-    /* LEFT */
-    nav {
-        width: auto;
-        height: 80%;
-        min-height: 600px;
-        display: flex;
-        flex-direction: row;
-    }
-
-    .lat {
-        width: 100px;
-        height: available;
         display: flex;
         align-items: center;
         justify-content: center;
+        color: white;
+    }
+
+    .content-left{
+        width: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+    }
+
+    .content-center{
+        width: 90%;
+        min-width: 300px;
+    }
+
+    .content-right{
+        width: 10%;
+        min-width: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+    }
+
+    .lat {
+        width: 20%;
+        min-width: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: available;
         color: white;
     }
 
     .equ {
-        width: 100px;
-        height: available;
+        width: 80%;
+        min-width: 100px;
+        min-height: 600px;
+        align-items: center;
+        color: white;
+        background-color: #28292a;
+        border: 5px solid #f69839;
+    }
+
+    .music-wave-left{
+        width: 15%;
         display: flex;
         align-items: center;
         justify-content: center;
         color: white;
-        border: 5px solid #f69839;
     }
 
-    /* CENTER */
-    main {
+    .music-wave-title{
+        width: 100%;
+        min-height: 100px;
         display: flex;
-        flex-direction: column;
-        flex-grow: 1;
-    }
-
-    main .colleft {
+        align-items: center;
+        justify-content: center;
         color: white;
-    }
-
-    .keyboard {
-        width: 250px;
-        transform: rotate(-90deg);
-        margin: 0 -60px 0 -5px;
-    }
-
-    .middlewave {
         background-color: #f69839;
+    }
+
+    .music-wave{
+        width: 100%;
+        min-height: 100px;
+        background-color: #212427;
     }
 
     .middle {
@@ -119,18 +136,12 @@
         color: white;
     }
 
-    /* RIGHT */
-    .right {
-        width: 10%;
-        min-width: 100px;
+    .main {
+        width: 100%;
+        height:250px;
         display: flex;
         align-items: center;
         justify-content: center;
-        color: white;
-        border: 2px solid black;
-    }
-
-    .main {
         color: white;
     }
 
@@ -216,12 +227,18 @@
         margin: 0 0 0 -1rem;
     }
 
+    .keyboard {
+        width: 330px;
+        transform: rotate(-90deg);
+        margin: 0 -60px 0 -5px;
+    }
+
     #keyboard {
-        height: 15.25rem;
+        height: 15.20rem;
         /*width: 41rem;*/
-        margin: 0rem;
-        padding: 0px;
-        position: relative;
+        margin: 0;
+        padding: 0;
+        position: absolute;
         border: 1px solid var(--keyboard-border);
         border-radius: 1rem;
         background-color: var(--keyboard);
@@ -231,82 +248,137 @@
 </style>
 
 <body>
-<header>
-    <div class="openicon">open icon</div>
-    <div class="top">top</div>
-</header>
 
-<div class="wrapper">
-    <nav>
-        <div class="lat">lat</div>
-        <div class="equ">equ</div>
-    </nav>
-
-    <main>
-        <div class="container">
-            <div class="colleft">
-                left
-            </div>
-        </div>
-        <div class="container center">
-            <div class="middlewave">
-                Music wave
-            </div>
-            <div class="middlewave">
-                Music wave
-            </div>
-        </div>
-        <div class="container center">
-            <div class="middle">
-                middle
-            </div>
-        </div>
-        <div class="container">
-            <div class="container left">
-            <div class="keyboard">
-                <ul id="keyboard">
-                    <li note="C" class="white">A</li>
-                    <li note="C#" class="black">W</li>
-                    <li note="D" class="white offset">S</li>
-                    <li note="D#" class="black">E</li>
-                    <li note="E" class="white offset">D</li>
-                    <li note="F" class="white">F</li>
-                    <li note="F#" class="black">T</li>
-                    <li note="G" class="white offset">G</li>
-                    <li note="G#" class="black">Y</li>
-                    <li note="A" class="white offset">H</li>
-                    <li note="A#" class="black">U</li>
-                    <li note="B" class="white offset">J</li>
-                    <li note="C2" class="white">K</li>
-                    <li note="C#2" class="black">O</li>
-                    <li note="D2" class="white offset">L</li>
-                    <li note="D#2" class="black">P</li>
-                    <li note="E2" class="white offset">;</li>
-                </ul>
-            </div>
-            </div>
-            <div class="container center">
-            <div class="main">
-                main
-            </div>
-            </div>
-        </div>
-        <div class="container center">
-            <div class="bottom">
-                bottom
-            </div>
-        </div>
-    </main>
-
-    <div class="right">
-        right
+<!--Header-->
+<div class="container row header">
+    <div class="header-openicon">
+        open icon
+    </div>
+    <div class="header-top boder-2-black">
+        top
     </div>
 </div>
 
-<footer>
-    Player
-</footer>
+<!--Content-->
+<div class="container row">
+    <!--Column Left-->
+    <div class="content-left boder-2-black">
+        <div class="lat">
+            lat
+        </div>
+        <div class="container row center equ">
+            equ
+        </div>
+    </div>
+
+    <!--Column Center-->
+    <div class="content-center">
+        <!--Music Wave-->
+        <div class="container row">
+            <!--Left-->
+            <div class="music-wave-left boder-2-black">
+                left
+            </div>
+
+            <!--Center-->
+            <div class="container column">
+                <div class="music-wave-title">
+                    music wave
+                </div>
+                <div class="music-wave">
+                    <div id="waveform"></div>
+                </div>
+            </div>
+        </div>
+
+        <!--Middle-->
+        <div class="container row center middle boder-2-black">
+            middle
+        </div>
+
+        <!--Main-->
+        <div class="container row boder-2-black">
+            <!--Piano-->
+            <div class="keyboard">
+                    <ul id="keyboard">
+                        <li note="C" class="white">A</li>
+                        <li note="C#" class="black">W</li>
+                        <li note="D" class="white offset">S</li>
+                        <li note="D#" class="black">E</li>
+                        <li note="E" class="white offset">D</li>
+                        <li note="F" class="white">F</li>
+                        <li note="F#" class="black">T</li>
+                        <li note="G" class="white offset">G</li>
+                        <li note="G#" class="black">Y</li>
+                        <li note="A" class="white offset">H</li>
+                        <li note="A#" class="black">U</li>
+                        <li note="B" class="white offset">J</li>
+                        <li note="C2" class="white">K</li>
+                        <li note="C#2" class="black">O</li>
+                        <li note="D2" class="white offset">L</li>
+                        <li note="D#2" class="black">P</li>
+                        <li note="E2" class="white offset">;</li>
+                    </ul>
+
+            </div>
+
+            <div class="main">
+                main
+            </div>
+        </div>
+
+        <!--Bottom-->
+        <div class="container row center bottom">
+            bottom
+        </div>
+    </div>
+
+    <!--Column Right-->
+    <div class="content-right boder-2-black">
+        right
+    </div>
+
+</div>
+
+<!--Footer-->
+<div class="container row center">
+    <div class="controls">
+
+        <audio controls>
+            <source src="./songs/relaxing.mp3" type="audio/mp3">
+            Seu navegador não suporta áudio tag.
+        </audio>
+        <form class="upload-imagem">
+            <input type="file" class="upload" required>
+            <button>Alterar Imagem</button>
+        </form>
+        <button class="btn btn-primary" data-action="play">
+            <i class="glyphicon glyphicon-play"></i>
+            Play
+            /
+            <i class="glyphicon glyphicon-pause"></i>
+            Pause
+        </button>
+    </div>
+</div>
+
 </body>
+
+<!--Scripts-->
+<script src="https://unpkg.com/wavesurfer.js"></script>
+<script>
+    let wavesurfer = WaveSurfer.create({
+        container: '#waveform',
+        waveColor: 'violet',
+        progressColor: 'purple',
+        backend: 'MediaElement',
+
+    });
+    wavesurfer.load('./songs/relaxing.mp3');
+    wavesurfer.on('ready', function () {
+        wavesurfer.play();
+    });
+</script>
 <script>
     const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 
@@ -314,23 +386,23 @@
         note && document.querySelector(`[note="${note}"]`);
 
     const keys = {
-        A: { element: getElementByNote("C"), note: "C", octaveOffset: 0 },
-        W: { element: getElementByNote("C#"), note: "C#", octaveOffset: 0 },
-        S: { element: getElementByNote("D"), note: "D", octaveOffset: 0 },
-        E: { element: getElementByNote("D#"), note: "D#", octaveOffset: 0 },
-        D: { element: getElementByNote("E"), note: "E", octaveOffset: 0 },
-        F: { element: getElementByNote("F"), note: "F", octaveOffset: 0 },
-        T: { element: getElementByNote("F#"), note: "F#", octaveOffset: 0 },
-        G: { element: getElementByNote("G"), note: "G", octaveOffset: 0 },
-        Y: { element: getElementByNote("G#"), note: "G#", octaveOffset: 0 },
-        H: { element: getElementByNote("A"), note: "A", octaveOffset: 1 },
-        U: { element: getElementByNote("A#"), note: "A#", octaveOffset: 1 },
-        J: { element: getElementByNote("B"), note: "B", octaveOffset: 1 },
-        K: { element: getElementByNote("C2"), note: "C", octaveOffset: 1 },
-        O: { element: getElementByNote("C#2"), note: "C#", octaveOffset: 1 },
-        L: { element: getElementByNote("D2"), note: "D", octaveOffset: 1 },
-        P: { element: getElementByNote("D#2"), note: "D#", octaveOffset: 1 },
-        semicolon: { element: getElementByNote("E2"), note: "E", octaveOffset: 1 }
+        A: {element: getElementByNote("C"), note: "C", octaveOffset: 0},
+        W: {element: getElementByNote("C#"), note: "C#", octaveOffset: 0},
+        S: {element: getElementByNote("D"), note: "D", octaveOffset: 0},
+        E: {element: getElementByNote("D#"), note: "D#", octaveOffset: 0},
+        D: {element: getElementByNote("E"), note: "E", octaveOffset: 0},
+        F: {element: getElementByNote("F"), note: "F", octaveOffset: 0},
+        T: {element: getElementByNote("F#"), note: "F#", octaveOffset: 0},
+        G: {element: getElementByNote("G"), note: "G", octaveOffset: 0},
+        Y: {element: getElementByNote("G#"), note: "G#", octaveOffset: 0},
+        H: {element: getElementByNote("A"), note: "A", octaveOffset: 1},
+        U: {element: getElementByNote("A#"), note: "A#", octaveOffset: 1},
+        J: {element: getElementByNote("B"), note: "B", octaveOffset: 1},
+        K: {element: getElementByNote("C2"), note: "C", octaveOffset: 1},
+        O: {element: getElementByNote("C#2"), note: "C#", octaveOffset: 1},
+        L: {element: getElementByNote("D2"), note: "D", octaveOffset: 1},
+        P: {element: getElementByNote("D#2"), note: "D#", octaveOffset: 1},
+        semicolon: {element: getElementByNote("E2"), note: "E", octaveOffset: 1}
     };
 
     const getHz = (note = "A", octave = 4) => {
@@ -473,7 +545,7 @@
         stopKey(key);
     });
 
-    for (const [key, { element }] of Object.entries(keys)) {
+    for (const [key, {element}] of Object.entries(keys)) {
         element.addEventListener("mousedown", () => {
             playKey(key);
             clickedKey = key;
