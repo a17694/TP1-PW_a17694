@@ -10,12 +10,12 @@ Requisitos principais da interface
 - [x] O piano deve ser projetado com HTML e CSS e deve ser clicável.
 
 - Em relação à funcionalidade em JavaScript:
-- [ ] Os usuários podem abrir um arquivo e reproduzi-lo, clicando em um ícone representado por um quadrado laranja de abertura na imagem.
+- [x] Os usuários podem abrir um arquivo e reproduzi-lo, clicando em um ícone representado por um quadrado laranja de abertura na imagem.
 - [x] A onda sonora vai para a seção de onda sonora da música.
-- [ ] Os usuários podem iniciar, parar e pausar a reprodução da música, clicando nos botões ▶, ⏹ e ⏸ (mude um dos botões para pausa).
-- [ ] Os outros botões não têm funcionalidade.
+- [x] Os usuários podem iniciar, parar e pausar a reprodução da música, clicando nos botões ▶, ⏹ e ⏸ (mude um dos botões para pausa).
+- [x] Os outros botões não têm funcionalidade.
 - [x] Os usuários podem assistir aos batimentos sonoros como um equalizador na seção equ.
-- [ ] Os usuários podem ver o comprimento da música no rodapé.
+- [x] Os usuários podem ver o comprimento da música no rodapé.
 - [x] Cada tecla do piano deve reproduzir um som diferente.
 
 Datas
