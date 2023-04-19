@@ -1,10 +1,158 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <!--Style-->
+    <link rel="stylesheet" href="css/main.css"/>
 </head>
 <body>
 
+<!--Header-->
+<div class="container row header">
+    <form class="header-openicon">
+        <label class="cursor-pointer">
+            <span>open icon</span>
+            <input type="file" class="hidden" id="open-file" accept="audio/*">
+        </label>
+    </form>
+    <div class="header-top boder-2-black">
+        top
+    </div>
+</div>
+
+<!--Content-->
+<div class="container row">
+    <!--Column Left-->
+    <div class="content-left">
+        <div class="lat boder-2-black">
+            lat
+        </div>
+        <canvas id="meter" class="container row equ"></canvas>
+        <div class="equtext">
+            equ
+        </div>
+    </div>
+
+    <!--Column Center-->
+    <div class="content-center">
+        <!--Music Wave-->
+        <div class="container row">
+            <!--Left-->
+            <div class="music-wave-left boder-2-black">
+                left
+            </div>
+
+            <!--Center-->
+            <div class="container column">
+                <div class="music-wave-title">
+                    music wave
+                </div>
+                <div class="music-wave">
+                    <div id="waveform"></div>
+                </div>
+            </div>
+        </div>
+
+        <!--Middle-->
+        <div class="container row center middle boder-2-black">
+            middle
+        </div>
+
+        <!--Main-->
+        <div class="container row boder-2-black">
+            <!--Piano-->
+            <ul id="keyboard">
+                <li note="C" class="white"></li>
+                <li note="C#" class="black"></li>
+                <li note="D" class="white"></li>
+                <li note="D#" class="black"></li>
+                <li note="E" class="white">C6</li>
+                <li note="F" class="white"></li>
+                <li note="F#" class="black"></li>
+                <li note="G" class="white"></li>
+                <li note="G#" class="black"></li>
+                <li note="A" class="white"></li>
+                <li note="A#" class="black"></li>
+                <li note="B" class="white">C5</li>
+                <li note="C2" class="white"></li>
+                <li note="C#2" class="black"></li>
+                <li note="D2" class="white"></li>
+                <li note="D#2" class="black"></li>
+                <li note="E2" class="white"></li>
+            </ul>
+
+            <div class="main">
+                main
+            </div>
+        </div>
+
+        <!--Bottom-->
+        <div class="container row center bottom">
+            bottom
+        </div>
+    </div>
+
+    <!--Column Right-->
+    <div class="content-right boder-2-black">
+        right
+    </div>
+
+</div>
+
+<!--Footer-->
+<div class="footer">
+    <div class="container row">
+        <div class="container">
+            <div class="controls">
+                <button class="btn btn-primary" onclick="wavesurfer.skipBackward()">
+                    <i class="fa fa-step-backward" title="Backward"></i>
+                </button>
+
+                <button class="btn btn-primary" id="player-btn-play" data-playing="false">
+                    <i class="fa fa-play" title="Play"></i>
+                    <i class="fa fa-pause hidden" title="Pause"></i>
+                </button>
+
+                <button class="btn btn-primary" id="player-btn-stop">
+                    <i class="fa fa-stop" title="Stop"></i>
+                </button>
+
+                <button class="btn btn-primary" onclick="wavesurfer.skipForward()">
+                    <i class="fa fa-step-forward"></i>
+                </button>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row player-timeline">
+                <div class="container center">
+                    <div class="column">
+                        <span>Start: </span><br>
+                        <span>End: </span>
+                    </div>
+                    <div class="column">
+                        <span class="player-time player-time-current">00:00</span><br>
+                        <span class="player-time player-time-duration">00:00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container footertext">
+            footer
+        </div>
+    </div>
+
+    <div class="container row">
+        <div class="player-progress cursor-pointer">
+            <div class="player-progress-filled"></div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
+
+<!--Scripts-->
+<script src="js/piano.js"></script>
+<script src="https://unpkg.com/wavesurfer.js"></script>
+<script src="js/player.js"></script>
