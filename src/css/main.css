@@ -1,53 +1,301 @@
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 body {
+    min-width: 600px;
+    height: 100%;
+    min-height: 100vh;
+    background-color: #5b0a0d;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* BASE */
+.container {
+    width: 100%;
     display: flex;
+}
+
+.row {
+    flex-direction: row;
+}
+
+.column {
     flex-direction: column;
-    height: 100vh;
 }
 
-header {
-    /* estilo para seção top */
+.center {
+    justify-content: center;
 }
 
-.wrapper {
+.boder-2-black {
+    border: 2px solid black;
+}
+
+.cursor-pointer{
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+/* HEADER */
+.header {
+    width: 100%;
+    height: 40px;
+}
+
+.header-openicon {
+    background-color: #f69839;
+    width: 30px;
+    padding: 6px;
+    font-size: x-small;
+    text-align: left;
+    color: white;
+}
+
+.header-top {
+    width: 98%;
+    min-width: 50px;
     display: flex;
-    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    color: white;
 }
 
-nav {
-    /* estilo para seção lat */
-}
-
-main {
+/* CONTENT */
+.content-left {
+    width: 20%;
+    min-height: 89vh;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    color: white;
 }
 
-.middlewave {
-    /* estilo para seção middlewave */
+.content-center {
+    width: 90%;
+    min-width: 300px;
+}
+
+.content-right {
+    width: 10%;
+    min-width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.lat {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+    min-width: 10px;
+    height: 100%;
+    color: white;
+}
+
+.equ {
+    width: 80%;
+    height: 100%;
+    min-width: 100px;
+    align-items: center;
+    color: white;
+    background-color: #28292a;
+    border: 5px solid #f69839;
+}
+
+.equtext {
+    position: absolute;
+    padding: 0 5% 0 6%;
+}
+
+.music-wave-left {
+    width: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.music-wave-title {
+    width: 100%;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: xx-large;
+    background-color: #f69839;
+}
+
+.music-wave {
+    width: 100%;
+    min-height: 150px;
+    background-color: #212427;
 }
 
 .middle {
-    /* estilo para seção middle */
-}
-
-.right {
-    /* estilo para seção right */
+    height: 7vh;
+    align-items: center;
+    justify-content: center;
+    color: white;
 }
 
 .main {
-    /* estilo para seção main */
+    width: 100%;
+    height: available;
+    margin-left: -13%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
 }
 
-.piano {
-    /* estilo para seção piano */
+.bottom {
+    height: available;
+    color: white;
 }
 
-aside {
-    /* estilo para seção equ */
+/* FOOTER */
+.footer {
+    color: white;
+    border: 5px solid #f69839;
+    background-color: #3c3f40;
+    margin: 0;
+    padding: 0;
 }
 
-footer {
-    /* estilo para seção bottom e footer */
+.footertext{
+    display: flex;
+    justify-content: flex-end;
+    align-items: end;
+    padding-right: 10%;
+}
+
+/* KEYBOARD */
+#keyboard {
+    width: 12%;
+    list-style: none;
+    margin: 0 0 0 -2px;
+    padding: 0;
+    border-right: 3px solid black;
+}
+
+#keyboard li{
+    cursor: pointer;
+}
+
+#keyboard li:first-child {
+    border-radius: 0 5px 3px 0;
+}
+
+#keyboard li:last-child {
+    border-radius: 0 3px 5px 0;
+}
+
+.white, .black {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 2%;
+    font-size: x-small;
+}
+
+.white {
+    height: 4vh;
+    border-radius: 0 3px 3px 0;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    color: black;
+    background-color: white;
+}
+
+.black {
+    width: 4%;
+    height: 2vh;
+    position: absolute;
+    z-index: 2;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    border-radius: 0 3px 3px 0;
+    margin-top: -10px;
+    color: white;
+    background-color: black;
+}
+
+.black:nth-child(4) {
+    margin-top: 0;
+}
+
+.black:nth-child(11) {
+    margin-top: 0;
+}
+
+.white.pressed {
+    border-top: 1px solid hsl(0, 0%, 40%);
+    border-right: 1px solid hsl(0, 0%, 60%);
+    border-bottom: 1px solid hsl(0, 0%, 60%);
+    background: linear-gradient(to bottom, white 0%, hsl(0, 0%, 91%) 100%);
+    outline: none;
+}
+
+.black.pressed {
+    border-top: 1px solid hsl(0, 0%, 40%);
+    border-right: 1px solid hsl(0, 0%, 60%);
+    border-bottom: 1px solid hsl(0, 0%, 60%);
+    background: linear-gradient(to bottom, black 0%, hsl(0, 0%, 15%) 100%);
+    outline: none;
+}
+
+/* Player */
+.player-timeline {
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-color: #303234;
+}
+
+.player-timeline span{
+    font-size: smaller;
+    margin: 0;
+    padding: 0;
+}
+
+.player-progress {
+    display: flex;
+    height: 3vh;
+    margin: 0;
+    flex: 10;
+    flex-basis: 100%;
+    overflow: hidden;
+    background-color: black;
+}
+
+.player-progress-filled {
+    background: #00ff0d;
+    flex: 0;
+    flex-basis: 0%;
+}
+
+.player-time {
+    padding: 2px 5px;
+}
+
+.controls button{
+    padding: 12px;
+    background-color: #737575;
+    border: none;
+    cursor: pointer;
 }

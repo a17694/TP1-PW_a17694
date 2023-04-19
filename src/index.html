@@ -1,262 +1,22 @@
 <!doctype html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <!--Style-->
-    <style>
-    html {
-        margin: 0;
-        padding: 0;
-    }
-
-    body {
-        min-width: 600px;
-        height: 100vh;
-        background-color: #5b0a0d;
-        border: none;
-        margin: 0;
-        padding: 0;
-    }
-
-    /* BASE */
-    .container {
-        width: 100%;
-        display: flex;
-    }
-
-    .row {
-        flex-direction: row;
-    }
-
-    .column {
-        flex-direction: column;
-    }
-
-    .center {
-        justify-content: center;
-    }
-
-    .boder-2-black {
-        border: 2px solid black;
-    }
-
-    /* END BASE */
-
-    /* HEADER */
-    .header {
-        width: 100%;
-        height: 40px;
-    }
-
-    .header-openicon {
-        background-color: #f69839;
-        width: 2%;
-        min-width: 25px;
-        padding: 6px;
-        font-size: x-small;
-        text-align: left;
-        color: white;
-    }
-
-    .header-top {
-        width: 98%;
-        min-width: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-    }
-
-    /* CONTENT */
-    .content-left {
-        width: 20%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-    }
-
-    .content-center {
-        width: 90%;
-        min-width: 300px;
-    }
-
-    .content-right {
-        width: 10%;
-        min-width: 150px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-    }
-
-    .lat {
-        width: 20%;
-        min-width: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: available;
-        color: white;
-    }
-
-    .equ {
-        width: 80%;
-        height: available;
-        min-width: 100px;
-        min-height: 800px;
-        align-items: center;
-        color: white;
-        background-color: #28292a;
-        border: 5px solid #f69839;
-    }
-
-    .equtext{
-        position: absolute;
-        padding: 0 5% 0 6%;
-    }
-
-    .music-wave-left {
-        width: 15%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-    }
-
-    .music-wave-title {
-        width: 100%;
-        min-height: 100px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-size: xx-large;
-        background-color: #f69839;
-    }
-
-    .music-wave {
-        width: 100%;
-        min-height: 100px;
-        background-color: #212427;
-    }
-
-    .middle {
-        height: 60px;
-        align-items: center;
-        justify-content: center;
-        color: white;
-    }
-
-    .main {
-        width: 100%;
-        height: available;
-        margin-left: -20%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-    }
-
-    .bottom {
-        height: available;
-        color: white;
-    }
-
-    /* FOOTER */
-    footer {
-        color: white;
-        border: 5px solid #f69839;
-    }
-
-    /* KEYBOARD */
-    #keyboard {
-        width: 12%;
-        list-style: none;
-        margin: 0 0 0 -2px;
-        padding: 0;
-        border-right: 3px solid black;
-    }
-
-    #keyboard li:first-child {
-        border-radius: 0 5px 3px 0;
-    }
-
-    #keyboard li:last-child {
-        border-radius: 0 3px 5px 0;
-    }
-
-    .white, .black {
-        position: relative;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        padding-right: 2%;
-        font-size: x-small;
-    }
-
-    .white {
-        height: 30px;
-        border-radius: 0 3px 3px 0;
-        border-top: 1px solid black;
-        border-bottom: 1px solid black;
-        color: black;
-        background-color: white;
-    }
-
-    .black {
-        width: 4%;
-        height: 17px;
-        position: absolute;
-        z-index: 2;
-        border-top: 1px solid black;
-        border-bottom: 1px solid black;
-        border-radius: 0 3px 3px 0;
-        margin-top: -15px;
-        color: white;
-        background-color: black;
-    }
-
-    .black:nth-child(4) {
-        margin-top: 0;
-    }
-
-    .black:nth-child(11) {
-        margin-top: 0;
-    }
-
-    .white.pressed {
-        border-top: 1px solid hsl(0, 0%, 40%);
-        border-right: 1px solid hsl(0, 0%, 60%);
-        border-bottom: 1px solid hsl(0, 0%, 60%);
-        background: linear-gradient(to bottom, white 0%, hsl(0, 0%, 91%) 100%);
-        outline: none;
-    }
-
-    .black.pressed {
-        border-top: 1px solid hsl(0, 0%, 40%);
-        border-right: 1px solid hsl(0, 0%, 60%);
-        border-bottom: 1px solid hsl(0, 0%, 60%);
-        background: linear-gradient(to bottom, black 0%, hsl(0, 0%, 15%) 100%);
-        outline: none;
-    }
-
-    /*#waveform wave{*/
-    /*    width: 100%;*/
-    /*    overflow-x: hidden !important;*/
-    /*}*/
-
-
-</style>
-
+    <link rel="stylesheet" href="css/main.css"/>
 </head>
 <body>
 
 <!--Header-->
 <div class="container row header">
-    <div class="header-openicon">
-        open icon
-    </div>
+    <form class="header-openicon">
+        <label class="cursor-pointer">
+            <span>open icon</span>
+            <input type="file" class="hidden" id="open-file" accept="audio/*">
+        </label>
+    </form>
     <div class="header-top boder-2-black">
         top
     </div>
@@ -265,23 +25,14 @@
 <!--Content-->
 <div class="container row">
     <!--Column Left-->
-    <div class="content-left boder-2-black">
-        <div class="lat">
+    <div class="content-left">
+        <div class="lat boder-2-black">
             lat
         </div>
-        <canvas id="meter" class="container row equ">
-
-
-<!--            <canvas id="meter" style="border: 1px solid red; width: 100%;height: 100%"></canvas>-->
-
-            <div class="equtext">
-                equ
-            </div>
-
-
-
-        </canvas>
-
+        <canvas id="meter" class="container row equ"></canvas>
+        <div class="equtext">
+            equ
+        </div>
     </div>
 
     <!--Column Center-->
@@ -351,332 +102,57 @@
 </div>
 
 <!--Footer-->
-<div class="container row center">
+<div class="footer">
+    <div class="container row">
+        <div class="container">
+            <div class="controls">
+                <button class="btn btn-primary" onclick="wavesurfer.skipBackward()">
+                    <i class="fa fa-step-backward" title="Backward"></i>
+                </button>
 
-    <div class="controls">
-        <button class="btn btn-primary" onclick="wavesurfer.skipBackward()">
-            <i class="fa fa-step-backward"></i>
-            Backward
-        </button>
+                <button class="btn btn-primary" id="player-btn-play" data-playing="false">
+                    <i class="fa fa-play" title="Play"></i>
+                    <i class="fa fa-pause hidden" title="Pause"></i>
+                </button>
 
-        <button class="btn btn-primary" onclick="playSound();">
-            <i class="fa fa-play"></i>
-            Play
-            /
-            <i class="fa fa-pause"></i>
-            Pause
-        </button>
+                <button class="btn btn-primary" id="player-btn-stop">
+                    <i class="fa fa-stop" title="Stop"></i>
+                </button>
 
-        <button class="btn btn-primary" onclick="wavesurfer.skipForward()">
-            <i class="fa fa-step-forward"></i>
-            Forward
-        </button>
-        <input type="file" id="open-file" accept="audio/*" />
+                <button class="btn btn-primary" onclick="wavesurfer.skipForward()">
+                    <i class="fa fa-step-forward"></i>
+                </button>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row player-timeline">
+                <div class="container center">
+                    <div class="column">
+                        <span>Start: </span><br>
+                        <span>End: </span>
+                    </div>
+                    <div class="column">
+                        <span class="player-time player-time-current">00:00</span><br>
+                        <span class="player-time player-time-duration">00:00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container footertext">
+            footer
+        </div>
+    </div>
+
+    <div class="container row">
+        <div class="player-progress cursor-pointer">
+            <div class="player-progress-filled"></div>
+        </div>
     </div>
 </div>
-
 </body>
 </html>
 
 <!--Scripts-->
-<script>
-    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-
-    const getElementByNote = (note) =>
-        note && document.querySelector(`[note="${note}"]`);
-
-    const keys = {
-        A: {element: getElementByNote("C"), note: "C", octaveOffset: 0},
-        W: {element: getElementByNote("C#"), note: "C#", octaveOffset: 0},
-        S: {element: getElementByNote("D"), note: "D", octaveOffset: 0},
-        E: {element: getElementByNote("D#"), note: "D#", octaveOffset: 0},
-        D: {element: getElementByNote("E"), note: "E", octaveOffset: 0},
-        F: {element: getElementByNote("F"), note: "F", octaveOffset: 0},
-        T: {element: getElementByNote("F#"), note: "F#", octaveOffset: 0},
-        G: {element: getElementByNote("G"), note: "G", octaveOffset: 0},
-        Y: {element: getElementByNote("G#"), note: "G#", octaveOffset: 0},
-        H: {element: getElementByNote("A"), note: "A", octaveOffset: 1},
-        U: {element: getElementByNote("A#"), note: "A#", octaveOffset: 1},
-        J: {element: getElementByNote("B"), note: "B", octaveOffset: 1},
-        K: {element: getElementByNote("C2"), note: "C", octaveOffset: 1},
-        O: {element: getElementByNote("C#2"), note: "C#", octaveOffset: 1},
-        L: {element: getElementByNote("D2"), note: "D", octaveOffset: 1},
-        P: {element: getElementByNote("D#2"), note: "D#", octaveOffset: 1},
-        semicolon: {element: getElementByNote("E2"), note: "E", octaveOffset: 1}
-    };
-
-    const getHz = (note = "A", octave = 4) => {
-        const A4 = 440;
-        let N = 0;
-        switch (note) {
-            default:
-            case "A":
-                N = 0;
-                break;
-            case "A#":
-            case "Bb":
-                N = 1;
-                break;
-            case "B":
-                N = 2;
-                break;
-            case "C":
-                N = 3;
-                break;
-            case "C#":
-            case "Db":
-                N = 4;
-                break;
-            case "D":
-                N = 5;
-                break;
-            case "D#":
-            case "Eb":
-                N = 6;
-                break;
-            case "E":
-                N = 7;
-                break;
-            case "F":
-                N = 8;
-                break;
-            case "F#":
-            case "Gb":
-                N = 9;
-                break;
-            case "G":
-                N = 10;
-                break;
-            case "G#":
-            case "Ab":
-                N = 11;
-                break;
-        }
-        N += 12 * (octave - 4);
-        return A4 * Math.pow(2, N / 12);
-    };
-
-    const pressedNotes = new Map();
-    let clickedKey = "";
-
-    const playKey = (key) => {
-        if (!keys[key]) {
-            return;
-        }
-
-        const osc = audioContext.createOscillator();
-        const noteGainNode = audioContext.createGain();
-        noteGainNode.connect(audioContext.destination);
-
-        const zeroGain = 0.00001;
-        const maxGain = 0.5;
-        const sustainedGain = 0.001;
-
-        noteGainNode.gain.value = zeroGain;
-
-        const setAttack = () =>
-            noteGainNode.gain.exponentialRampToValueAtTime(
-                maxGain,
-                audioContext.currentTime + 0.01
-            );
-        const setDecay = () =>
-            noteGainNode.gain.exponentialRampToValueAtTime(
-                sustainedGain,
-                audioContext.currentTime + 1
-            );
-        const setRelease = () =>
-            noteGainNode.gain.exponentialRampToValueAtTime(
-                zeroGain,
-                audioContext.currentTime + 2
-            );
-
-        setAttack();
-        setDecay();
-        setRelease();
-
-        osc.connect(noteGainNode);
-        osc.type = "triangle";
-
-        const freq = getHz(keys[key].note, (keys[key].octaveOffset || 0) + 3);
-
-        if (Number.isFinite(freq)) {
-            osc.frequency.value = freq;
-        }
-
-        keys[key].element.classList.add("pressed");
-        pressedNotes.set(key, osc);
-        pressedNotes.get(key).start();
-    };
-
-    const stopKey = (key) => {
-        if (!keys[key]) {
-            return;
-        }
-
-        keys[key].element.classList.remove("pressed");
-        const osc = pressedNotes.get(key);
-
-        if (osc) {
-            setTimeout(() => {
-                osc.stop();
-            }, 2000);
-
-            pressedNotes.delete(key);
-        }
-    };
-
-    document.addEventListener("keydown", (e) => {
-        const eventKey = e.key.toUpperCase();
-        const key = eventKey === ";" ? "semicolon" : eventKey;
-
-        if (!key || pressedNotes.get(key)) {
-            return;
-        }
-        playKey(key);
-    });
-
-    document.addEventListener("keyup", (e) => {
-        const eventKey = e.key.toUpperCase();
-        const key = eventKey === ";" ? "semicolon" : eventKey;
-
-        if (!key) {
-            return;
-        }
-        stopKey(key);
-    });
-
-    for (const [key, {element}] of Object.entries(keys)) {
-        element.addEventListener("mousedown", () => {
-            playKey(key);
-            clickedKey = key;
-        });
-    }
-
-    document.addEventListener("mouseup", () => {
-        stopKey(clickedKey);
-    });
-</script>
+<script src="js/piano.js"></script>
 <script src="https://unpkg.com/wavesurfer.js"></script>
-<script>
-
-    document.getElementById("open-file").onchange = function (evt) {
-        let file = evt.target.files[0];
-        let reader = new FileReader();
-        reader.onload = function(e) {
-
-            // depois ver os campos que tenho que passar para coloar o nome do file no nome da musica
-            // ou ver se ha metadados que possam ajudar nisto e meter no src do audio o file em
-            // base64 talvez e no fim chamar a funçao playsound
-            document.querySelector("audio").setAttribute('src', e.target.result)
-            //playSound(e.target.result);
-
-        }
-        reader.readAsArrayBuffer(file);
-    }
-
-    let wavesurfer = WaveSurfer.create({
-        container: '#waveform',
-        waveColor: 'white',
-        progressColor: 'blue',
-        backend: 'MediaElement',
-        hideScrollbar: true,
-    });
-    wavesurfer.load('./songs/relaxing.mp3');
-    // document.querySelector("audio").setAttribute('id', 'my-audio')
-
-    try {
-
-        canvas = document.getElementById('meter');
-        ctx = canvas.getContext("2d");
-        let gradient = ctx.createLinearGradient(0,0,0,300);
-        gradient.addColorStop(1,'#000000');
-        gradient.addColorStop(0.75,'#00ff0d');
-        gradient.addColorStop(0.25,'#ffff00');
-        gradient.addColorStop(0,'#fa0606');
-
-
-        let context = new AudioContext();
-
-        // function playSound(arraybuffer) {
-        function playSound() {
-            context.close();
-            context	= new AudioContext();
-
-            const audio = document.querySelector("audio")
-            let source = context.createMediaElementSource(audio);
-
-            // let source = context.createBufferSource();
-            // context.decodeAudioData(arraybuffer, function (buffer) {
-            //     source.buffer = buffer;
-            // });
-
-            splitter = context.createChannelSplitter();
-
-            let analyser = context.createAnalyser();
-            analyser.smoothingTimeConstant = 0.3;
-            analyser.fftSize = 1024;
-
-            jsNode = context.createScriptProcessor(2048, 1, 1);
-            function getAverageVolume(array) {
-                let values = 0;
-                let average;
-
-                let length = array.length;
-
-                for (let i = 0; i < length; i++) {
-                    values += array[i];
-                }
-
-                average = values / length;
-                return average;
-            }
-
-            jsNode.onaudioprocess = function() {
-                let array = new Uint8Array(analyser.frequencyBinCount);
-                analyser.getByteFrequencyData(array);
-                let average = getAverageVolume(array);
-
-                // clear the current state
-                ctx.clearRect(0, 0, 300, 130);
-
-                // set the fill style
-                ctx.fillStyle=gradient;
-
-                // create the meters
-                ctx.fillRect(0,130-average,300,130);
-
-            }
-
-            source.connect(splitter);
-            splitter.connect(analyser,0,0);
-            source.connect(analyser);
-            source.connect(context.destination);
-            jsNode.connect(context.destination);
-            analyser.connect(jsNode);
-
-            //source.start();
-            wavesurfer.play()
-        }
-
-        Math.average = function(arguments) {
-            let numbers;
-            if (arguments[0] instanceof Array) {
-                numbers = arguments[0];
-            }
-            else if (typeof arguments[0] == "number") {
-                numbers = arguments;
-            }
-            let sum		= 0;
-            let average	= 0;
-            for (let i = 0; i < numbers.length; i++) {
-                sum += numbers[i];
-            }
-            average = sum / numbers.length;
-            return average;
-        }
-
-
-    } catch (e) {
-        alert("Web Audio API is not supported by this browser\n ... http://caniuse.com/#feat=audio-api");
-    }
-</script>
+<script src="js/player.js"></script>
